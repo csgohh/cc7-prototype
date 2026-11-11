@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  background: #ffffff;
+  color: #2e3756;
+}
+
+body {
+  font-family: var(--font-rubik), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Senior app: body text is at least 20px */
+.senior-app {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-bebas), Impact, sans-serif;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+}
+
+:focus-visible {
+  outline: 4px solid #d4a35a;
+  outline-offset: 2px;
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex w-full min-h-[56px] items-center justify-center gap-3 rounded-2xl px-5 py-3 text-xl font-medium leading-tight transition active:scale-[0.98] disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply bg-teal text-white hover:bg-teal-dark;
+  }
+  .btn-secondary {
+    @apply border-2 border-teal bg-white text-teal hover:bg-card;
+  }
+  .btn-danger {
+    @apply bg-alert text-white hover:brightness-110;
+  }
+  .btn-gold {
+    @apply bg-gold text-navy hover:brightness-105;
+  }
+  .btn-sm {
+    @apply min-h-[44px] w-auto px-4 py-2 text-base;
+  }
+  .card {
+    @apply rounded-2xl border border-panel bg-card p-5;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-base font-medium;
+  }
+  .h1 {
+    @apply font-display text-4xl text-teal leading-tight;
+  }
+  .h2 {
+    @apply font-display text-3xl text-teal leading-tight;
+  }
+  .input {
+    @apply min-h-[56px] w-full rounded-2xl border-2 border-panel bg-white px-4 text-xl text-navy;
+  }
+}
